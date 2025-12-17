@@ -12,7 +12,7 @@ export async function POST(req: Request) {
 
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    const to = process.env.CONTACT_TO_EMAIL || "contacto@neuralcraft.com.ar"; //contacto@neuralcraft.com.ar
+    const to = process.env.CONTACT_TO_EMAIL || "bazang@gmail.com"; //contacto@neuralcraft.com.ar
     const from = process.env.CONTACT_FROM_EMAIL || "onboarding@resend.dev";
 
     await resend.emails.send({
