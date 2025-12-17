@@ -1,4 +1,41 @@
-import type { Metadata } from "next";
+import "./globals.css";
+
+export const metadata = {
+  title: "NeuralCraft | IA, Smart Cities y Desarrollo de Software",
+  description: "Soluciones de inteligencia artificial, smart cities y software a medida.",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const gaId = process.env.NEXT_PUBLIC_GA4_ID;
+
+  return (
+    <html lang="es">
+      <head>
+        {gaId ? (
+          <>
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${gaId}', { anonymize_ip: true });
+                `,
+              }}
+            />
+          </>
+        ) : null}
+      </head>
+
+      <body className="bg-neutral-950 text-neutral-100">{children}</body>
+    </html>
+  );
+}
+
+
+
+/* import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -32,3 +69,4 @@ export default function RootLayout({
     </html>
   );
 }
+ */
