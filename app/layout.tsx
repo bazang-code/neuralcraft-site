@@ -1,5 +1,10 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+
+export const viewport: Viewport = {
+  themeColor: "#0A0A0C",
+};
+
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.neuralcraft.com.ar"),
@@ -58,7 +63,7 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  themeColor: "#0A0A0C",
+  // themeColor: "#0A0A0C",
 };
 
 export default function RootLayout({
