@@ -9,13 +9,14 @@ const MODE: "startup" | "institucional" = "institucional";
 const copy = {
   institucional: {
     heroTitle:
-      "Ingeniería y soluciones de IA para modernización y gestión pública",
+      "Ingeniería aplicada a la Inteligencia Artificial",
     heroP1:
       "Desarrollamos soluciones tecnológicas que integran inteligencia artificial, analítica avanzada y software a medida para mejorar procesos, trazabilidad y toma de decisiones en organizaciones y organismos públicos.",
     heroP2:
       "Trabajamos con criterios de calidad, seguridad y escalabilidad, facilitando la integración con sistemas existentes y garantizando continuidad operativa.",
     ctaPrimary: "Conocer servicios",
     ctaSecondary: "Solicitar reunión",
+    ctaTercero: "Clientes",
     contactSubtitle:
       "Describí tu necesidad y te proponemos un enfoque de trabajo con alcance, hitos y plazos.",
   },
@@ -28,6 +29,7 @@ const copy = {
       "Combinamos ingeniería, ejecución rápida y tecnología moderna para pasar de idea a MVP y de MVP a escala.",
     ctaPrimary: "Ver servicios",
     ctaSecondary: "Agendar reunión",
+    ctaTercero: "Clientes",
     contactSubtitle:
       "Contanos tu desafío y te respondemos con una propuesta clara y accionable.",
   },
@@ -82,6 +84,10 @@ export default function Page() {
 
               <a href="#contacto">
                 {copy[MODE].ctaSecondary}
+              </a>
+
+              <a href="#clientes">
+                {copy[MODE].ctaTercero}
               </a>
             </div>
 
