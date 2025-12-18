@@ -9,7 +9,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-neutral-950/80 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-neutral-950/70 backdrop-blur-md shadow-sm">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         
         <a href="#top" className="flex items-center gap-3">

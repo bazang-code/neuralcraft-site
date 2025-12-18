@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function Section({
   id,
   title,
@@ -10,17 +12,18 @@ export default function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className="scroll-mt-24 py-16">
+    <section id={id} className="relative py-20">
+      {/* Separador suave */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
       <div className="mx-auto max-w-6xl px-4">
-        <div className="mb-8">
-          <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
-            {title}
-          </h2>
-          {subtitle && (
-            <p className="mt-2 max-w-2xl text-neutral-300">{subtitle}</p>
-          )}
-        </div>
-        {children}
+        <h2 className="text-3xl font-semibold tracking-tight">{title}</h2>
+
+        {subtitle ? (
+          <p className="mt-2 max-w-2xl text-neutral-300">{subtitle}</p>
+        ) : null}
+
+        <div className="mt-10">{children}</div>
       </div>
     </section>
   );
