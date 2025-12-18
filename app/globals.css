@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+:root {
+  --accent: 59 130 246; /* azul tipo "tech" (blue-500) */
+}
+
 html { scroll-behavior: smooth; }
 
 body {
@@ -8,4 +12,16 @@ body {
     radial-gradient(900px 500px at 20% -10%, rgba(66,165,245,0.20), transparent 60%),
     radial-gradient(700px 400px at 90% 20%, rgba(0,153,255,0.12), transparent 55%),
     linear-gradient(180deg, rgba(10,10,12,1), rgba(14,14,18,1));
+}
+
+.accent-text { color: rgb(var(--accent)); }
+.accent-bg { background-color: rgb(var(--accent)); }
+.accent-ring { box-shadow: 0 0 0 3px rgba(var(--accent), 0.20); }
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
 }

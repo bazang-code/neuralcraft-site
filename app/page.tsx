@@ -1,12 +1,15 @@
 import Navbar from "../components/Navbar";
 import Section from "../components/Section";
 import WhatsAppFloat from "../components/WhatsAppFloat";
+import Reveal from "../components/Reveal";
+import Stagger from "../components/Stagger";
+
 
 export default function Page() {
   const card =
-  "rounded-2xl border border-white/10 bg-white/5 shadow-sm backdrop-blur";
+    "rounded-2xl border border-white/10 bg-white/5 shadow-sm backdrop-blur";
   const cardHover =
-  "rounded-2xl border border-white/10 bg-white/5 shadow-sm backdrop-blur transition hover:bg-white/7 hover:border-white/20 hover:-translate-y-1 hover:shadow-lg";
+    "rounded-2xl border border-white/10 bg-white/5 shadow-sm backdrop-blur transition hover:bg-white/7 hover:border-white/20 hover:-translate-y-1 hover:shadow-lg";
   const input =
     "rounded-xl border border-white/10 bg-neutral-950/40 px-4 py-3 text-sm outline-none focus:border-white/30 focus:ring-2 focus:ring-white/10 transition";
 
@@ -15,11 +18,6 @@ export default function Page() {
       <Navbar />
       <WhatsAppFloat />
 
-{/*       <div className="p-6 text-4xl font-bold text-white">
-        Tailwind OK
-      </div>
- */}
-
       {/* HERO */}
       <section className="relative border-b border-white/10 overflow-hidden">
         {/* glows */}
@@ -27,9 +25,10 @@ export default function Page() {
         <div className="pointer-events-none absolute top-10 right-[-160px] h-96 w-96 rounded-full bg-white/5 blur-3xl" />
 
         <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-2 md:py-24">
+          {/* COLUMNA IZQUIERDA */}
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-neutral-200">
-              <span className="h-2 w-2 rounded-full bg-white/60" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-neutral-200 hover:border-white/25 transition">
+              <span className="h-2 w-2 rounded-full accent-bg" />
               IA • Smart Cities • Software
             </div>
 
@@ -52,7 +51,7 @@ export default function Page() {
             <div className="mt-7 flex flex-wrap gap-3">
               <a
                 href="#servicios"
-                className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-neutral-950 hover:bg-neutral-200 transition shadow-sm"
+                className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-neutral-950 hover:bg-neutral-200 transition shadow-sm focus:outline-none focus:accent-ring"
               >
                 Ver servicios
               </a>
@@ -80,8 +79,8 @@ export default function Page() {
             </div>
           </div>
 
-          {/* BLOQUE VISUAL */}
-          <div className="relative">
+          {/* COLUMNA DERECHA (REVEAL) */}
+          <Reveal className="relative">
             <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-b from-white/10 to-transparent blur-2xl" />
 
             <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-white/0 p-8 shadow-sm backdrop-blur">
@@ -93,6 +92,7 @@ export default function Page() {
                     clasificación de información y generación de contenido con IA.
                   </p>
                 </div>
+
                 <div className="rounded-2xl border border-white/10 bg-neutral-950/40 p-5 transition hover:border-white/20">
                   <div className="text-sm font-semibold">Analítica & BI</div>
                   <p className="mt-2 text-sm text-neutral-300">
@@ -100,6 +100,7 @@ export default function Page() {
                     datos para toma de decisiones.
                   </p>
                 </div>
+
                 <div className="rounded-2xl border border-white/10 bg-neutral-950/40 p-5 transition hover:border-white/20">
                   <div className="text-sm font-semibold">
                     Smart Cities & Software
@@ -122,7 +123,7 @@ export default function Page() {
                 ))}
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -132,7 +133,7 @@ export default function Page() {
         title="Nuestros servicios"
         subtitle="Soluciones modulares, escalables y alineadas a las necesidades de cada organización."
       >
-        <div className="grid gap-4 md:grid-cols-3">
+        <Stagger className="grid gap-4 md:grid-cols-3">
           {[
             {
               t: "IA Generativa",
@@ -164,7 +165,8 @@ export default function Page() {
               <p className="mt-2 text-sm text-neutral-300">{c.d}</p>
             </div>
           ))}
-        </div>
+        </Stagger>
+
       </Section>
 
       {/* NOSOTROS */}
@@ -256,11 +258,7 @@ export default function Page() {
             </p>
           </div>
 
-          <form
-            className={`${card} p-6`}
-            action="/api/contact"
-            method="post"
-          >
+          <form className={`${card} p-6`} action="/api/contact" method="post">
             <div className="grid gap-3">
               <input
                 name="name"

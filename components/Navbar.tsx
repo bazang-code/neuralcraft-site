@@ -34,12 +34,13 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm text-neutral-200 hover:text-white"
+              className="text-sm text-neutral-200 transition hover:text-[rgb(var(--accent))]"
             >
               {l.label}
             </a>
           ))}
         </div>
+
 
         <a
           href="#contacto"
