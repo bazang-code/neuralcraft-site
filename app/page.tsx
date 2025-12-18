@@ -4,6 +4,35 @@ import WhatsAppFloat from "../components/WhatsAppFloat";
 import Reveal from "../components/Reveal";
 import Stagger from "../components/Stagger";
 
+const MODE: "startup" | "institucional" = "institucional";
+
+const copy = {
+  institucional: {
+    heroTitle:
+      "Ingeniería y soluciones de IA para modernización y gestión pública",
+    heroP1:
+      "Desarrollamos soluciones tecnológicas que integran inteligencia artificial, analítica avanzada y software a medida para mejorar procesos, trazabilidad y toma de decisiones en organizaciones y organismos públicos.",
+    heroP2:
+      "Trabajamos con criterios de calidad, seguridad y escalabilidad, facilitando la integración con sistemas existentes y garantizando continuidad operativa.",
+    ctaPrimary: "Conocer servicios",
+    ctaSecondary: "Solicitar reunión",
+    contactSubtitle:
+      "Describí tu necesidad y te proponemos un enfoque de trabajo con alcance, hitos y plazos.",
+  },
+
+  startup: {
+    heroTitle: "Construimos soluciones de IA listas para producción",
+    heroP1:
+      "Diseñamos y desarrollamos productos digitales que integran IA, analítica y software a medida para acelerar resultados.",
+    heroP2:
+      "Combinamos ingeniería, ejecución rápida y tecnología moderna para pasar de idea a MVP y de MVP a escala.",
+    ctaPrimary: "Ver servicios",
+    ctaSecondary: "Agendar reunión",
+    contactSubtitle:
+      "Contanos tu desafío y te respondemos con una propuesta clara y accionable.",
+  },
+};
+
 
 export default function Page() {
   const card =
@@ -33,48 +62,41 @@ export default function Page() {
             </div>
 
             <h1 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
-              Ingeniería aplicada a la Inteligencia Artificial
+              {copy[MODE].heroTitle}
             </h1>
 
             <p className="mt-4 max-w-xl text-neutral-300">
-              Diseñamos y desarrollamos soluciones tecnológicas que integran
-              inteligencia artificial, analítica avanzada y software a medida
-              para organizaciones y ciudades.
+              {copy[MODE].heroP1}
             </p>
 
             <p className="mt-4 max-w-xl text-neutral-300">
-              En NeuralCraft combinamos experiencia en ingeniería, visión
-              estratégica y tecnología moderna para resolver problemas reales,
-              optimizar procesos y generar impacto medible.
+              {copy[MODE].heroP2}
             </p>
 
+
+
             <div className="mt-7 flex flex-wrap gap-3">
-              <a
-                href="#servicios"
-                className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-neutral-950 hover:bg-neutral-200 transition shadow-sm focus:outline-none focus:accent-ring"
-              >
-                Ver servicios
+              <a href="#servicios">
+                {copy[MODE].ctaPrimary}
               </a>
-              <a
-                href="#contacto"
-                className="rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10 transition"
-              >
-                Solicitar reunión
+
+              <a href="#contacto">
+                {copy[MODE].ctaSecondary}
               </a>
             </div>
 
             <div className="mt-10 grid grid-cols-3 gap-4 text-center">
               <div className={`${card} p-4`}>
                 <div className="text-xl font-semibold">20+ años</div>
-                <div className="text-xs text-neutral-300">Experiencia</div>
+                <div className="text-xs text-neutral-300">Experiencia en sistemas</div>
               </div>
               <div className={`${card} p-4`}>
-                <div className="text-xl font-semibold">Enfoque</div>
-                <div className="text-xs text-neutral-300">Resultados</div>
+                <div className="text-xl font-semibold">Gestión</div>
+                <div className="text-xs text-neutral-300">Procesos y control</div>
               </div>
               <div className={`${card} p-4`}>
                 <div className="text-xl font-semibold">Arquitectura</div>
-                <div className="text-xs text-neutral-300">Escalable</div>
+                <div className="text-xs text-neutral-300">Escalable y segura</div>
               </div>
             </div>
           </div>
@@ -137,27 +159,27 @@ export default function Page() {
           {[
             {
               t: "IA Generativa",
-              d: "Implementación de asistentes inteligentes, automatización documental, clasificación de información y generación de contenido mediante modelos de IA.",
+              d: "Asistentes inteligentes, automatización documental, clasificación de información, búsqueda semántica y generación de respuestas con criterios de trazabilidad.",
             },
             {
               t: "Analítica & BI",
-              d: "Desarrollo de tableros ejecutivos, indicadores clave, modelos predictivos y pipelines de datos para la toma de decisiones.",
+              d: "Tableros ejecutivos, indicadores de gestión, modelos predictivos y pipelines de datos para la toma de decisiones basada en evidencia.",
             },
             {
               t: "Smart Cities",
-              d: "Plataformas de gestión urbana, interoperabilidad de sistemas, analítica territorial y mejora de servicios al ciudadano.",
+              d: "Plataformas de gestión urbana, interoperabilidad de sistemas, analítica territorial y optimización de servicios al ciudadano.",
             },
             {
               t: "Desarrollo de Software",
-              d: "Diseño y desarrollo de aplicaciones web y móviles, APIs, integraciones y modernización de sistemas existentes.",
+              d: "Diseño y desarrollo de aplicaciones web y móviles, APIs e integraciones. Modernización y evolución de sistemas existentes.",
             },
             {
               t: "Cloud & DevOps",
-              d: "Arquitecturas escalables, automatización de despliegues, monitoreo, rendimiento y optimización de costos.",
+              d: "Arquitecturas escalables, automatización de despliegues, monitoreo, rendimiento y optimización de recursos.",
             },
             {
               t: "Ciberseguridad",
-              d: "Evaluaciones de seguridad, monitoreo, hardening, control de accesos y adopción de buenas prácticas.",
+              d: "Evaluaciones de seguridad, control de accesos, hardening de sistemas y adopción de buenas prácticas.",
             },
           ].map((c) => (
             <div key={c.t} className={`${cardHover} p-6`}>
@@ -180,12 +202,12 @@ export default function Page() {
             <p className="text-sm text-neutral-300">
               NeuralCraft es una empresa tecnológica fundada por ingenieros con
               más de 20 años de experiencia en sistemas, gestión de proyectos y
-              transformación digital, tanto en el sector público como privado.
+              modernización tecnológica, tanto en el sector público como privado.
             </p>
             <p className="mt-3 text-sm text-neutral-300">
-              Trabajamos con un enfoque práctico y orientado a resultados,
-              acompañando a las organizaciones desde la definición del problema
-              hasta la implementación de soluciones sostenibles y escalables.
+              Acompañamos a las organizaciones desde el diagnóstico hasta la implementación,
+              priorizando continuidad operativa, seguridad, integración con sistemas
+              existentes y resultados medibles.
             </p>
           </div>
 
@@ -194,8 +216,8 @@ export default function Page() {
             <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-neutral-300">
               <li>Enfoque en ingeniería y calidad.</li>
               <li>Experiencia en contextos complejos y regulados.</li>
-              <li>Integración con sistemas existentes.</li>
-              <li>Visión estratégica + ejecución técnica.</li>
+              <li>Integración con sistemas y datos existentes.</li>
+              <li>Escalabilidad y continuidad operativa.</li>
             </ul>
           </div>
         </div>
@@ -204,8 +226,8 @@ export default function Page() {
       {/* CLIENTES */}
       <Section
         id="clientes"
-        title="Clientes y referencias"
-        subtitle="Experiencia en proyectos para organismos públicos, empresas de servicios e industria."
+        title="Áreas de experiencia y referencias"
+        subtitle="Experiencia en proyectos de modernización, analítica y desarrollo para organismos y organizaciones."
       >
         <div className="grid gap-4 md:grid-cols-3">
           {[
@@ -238,7 +260,7 @@ export default function Page() {
       <Section
         id="contacto"
         title="Contacto"
-        subtitle="Contanos tu necesidad y evaluamos juntos la mejor solución tecnológica para tu organización."
+        subtitle={copy[MODE].contactSubtitle}
       >
         <div className="grid gap-6 md:grid-cols-2">
           <div className={`${card} p-6`}>
@@ -255,6 +277,9 @@ export default function Page() {
             <p className="mt-4 text-xs text-neutral-400">
               Si necesitás una propuesta formal, indicá alcance, plazos y
               contexto.
+            </p>
+            <p className="mt-3 text-xs text-neutral-400">
+              Tiempo de respuesta estimado: 24 a 48 hs hábiles.
             </p>
           </div>
 
