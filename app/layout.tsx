@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://www.neuralcraft.com.ar",
     siteName: "NeuralCraft",
-    title: "NeuralCraft | IA, Smart Cities y Desarrollo de Software",
+    title: "NeuralCraft | IA, Desarrolo de Software, Consultorias, Smart Cities, Servicio IT",
     description:
       "Ingeniería aplicada a la Inteligencia Artificial. Soluciones de IA, analítica, smart cities y software a medida.",
     images: [
